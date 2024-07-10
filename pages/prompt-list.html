@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body class="bg-gray-100">
+    <%- include('./layout/header'); -%>
+        <%- include('./layout/aside'); -%>
+        <%- include('./layout/toast'); -%>
+            <div class="px-6 mx-auto ">
+                <div class="pt-20  sm:ml-64">
+                    <div class=" flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4">
+                        <h2 class="text-4xl md:text-5xl  text-blue-700  font-bold mb-4">Subscription list</h2>
+                    </div>
+
+
+                    <button type="button" data-modal-target="add-prompt-modal" data-modal-toggle="add-prompt-modal"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1 me-2 mb-2 flex items-center justify-center ">
+                        <span class="material-symbols-fill me-2 text-xl">
+                            loupe
+                        </span>
+                        Add
+                    </button>
+
+                    <!-- add-prompt-modal -->
+
+                    <div id="add-prompt-modal" tabindex="-1"
+                        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative w-full max-w-4xl max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <!-- Modal header -->
+                                <div
+                                    class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                                    <h3 class="text-xl font-medium text-gray-900">
+                                        Add subscription topics
+                                    </h3>
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center "
+                                        data-modal-hide="add-prompt-modal">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="p-4 md:p-5 space-y-4">
+
+                                    <h4 class="text-3xl font-bold text-blue-700">
+                                        Enter keywords to start your personalized news subscription
+                                    </h4>
+                                    <div class="max-h-56 overflow-auto p-1 ">
+                                        <div class="mb-2">
+                                            <label for="default-input"
+                                                class="block mb-2 text-sm font-medium text-gray-900"> Your news subscription criteria</label>
+                                            <input type="text" id="default-input"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Please enter keywords">
+                                        </div>
+                                        <form class="flex items-center mb-2 ">
+                                            <input type="text"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 me-2" placeholder="Please enter keywords">
+
+                                            <button type="button"
+                                                class="text-gray-500 hover:text-red-600 p-1 text-center inline-flex items-center">
+                                                <span class="material-symbols-outlined text-2xl">
+                                                    delete
+                                                </span>
+
+                                            </button>
+
+                                        </form>
+                                        <form class="flex items-center mb-2 ">
+
+
+
+                                            <input type="text"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 me-2" placeholder="Please enter keywords">
+
+                                            <button type="button"
+                                                class="text-gray-500 hover:text-red-600 p-1 text-center inline-flex items-center">
+                                                <span class="material-symbols-outlined text-2xl">
+                                                    delete
+                                                </span>
+
+                                            </button>
+
+                                        </form>
+
+
+
+
+                                        <button type="button"
+                                            class="flex items-center px-3 py-1 text-sm  text-center text-blue-700 bg-blue-50 border border-blue-100 rounded-lg hover:bg-blue-100 focus:ring-1 focus:outline-none focus:ring-blue-300">
+                                            <span class="material-symbols-outlined text-xl">
+                                                add
+                                            </span>Add criteria
+                                        </button>
+                                    </div>
+
+                                    <div class="text-sm pt-2 border-t px-1 text-gray-600">
+                                        <p class="mb-2 flex items-start font-normal">
+                                            <span class="material-symbols-fill text-xl me-2">
+                                                lightbulb
+                                            </span>The text can be pure company names. If there are multiple keywords, separate them with commas. For example: TSMC, Nvidia, Apple.
+                                        </p>
+                                        <p class="flex items-start font-normal"> <span
+                                                class="material-symbols-fill text-xl me-2">
+                                                lightbulb
+                                            </span>Input text can be a single sentence, such as "news related to foundry industry"</p>
+                                    </div>
+                                </div>
+                                <!-- Modal footer -->
+
+                                <div
+                                    class="flex items-center  p-4 md:p-5 justify-end space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b ">
+                                    <button data-modal-hide="add-prompt-modal" type="button"
+                                        class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 me-2">Cancel</button>
+                                    <button data-modal-hide="add-prompt-modal" data-modal-target="add-prompt2-modal"
+                                        data-modal-toggle="add-prompt2-modal" type="button"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Next</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="add-prompt2-modal" tabindex="-1"
+                        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative w-full max-w-4xl max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <!-- Modal header -->
+                                <div
+                                    class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                    <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+                                        Add subscription topics
+                                    </h3>
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                        data-modal-hide="add-prompt2-modal">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="p-4 md:p-5 space-y-4">
+
+                                    <h4 class="text-3xl font-bold text-blue-700">
+                                        Your subscription topics
+                                    </h4>
+                                    <div class="max-h-56 overflow-auto p-1 ">
+                                        <div class="mb-2 ">
+                                         
+                                            <input type="text" id="default-input"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Please enter keywords">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal footer -->
+
+                                <div
+                                    class="flex items-center  p-4 md:p-5 justify-end space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b ">
+                                    <button data-modal-hide="large-modal" type="button"
+                                        class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 me-2">Cancel</button>
+                                    <button data-modal-hide="large-modal" type="button"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Confirm</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- table -->
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-4">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Name (your topics) 
+                                    </th>
+                                    <th scope="col" span="5" class="px-6 py-3 ">
+                                        Subscription criteria
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        News Per weeks
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Edit/ Delete
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        Semiconductor
+                                    </th>
+                                    <td class="px-6 py-4   ">
+                                        5nm semiconductor chip quotation
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        199
+                                    </td>
+                                    <td class="px-6 py-4 flex items-center">
+                                        <button data-modal-target="edit-prompt-modal"
+                                            data-modal-toggle="edit-prompt-modal" type="button"
+                                            class="px-3 py-1.5 text-xs font-medium text-center text-blue-700 border border-blue-500 rounded-md hover:bg-blue-50 focus:ring-4 focus:outline-none focus:ring-blue-300 flex items-center me-3 ">
+                                            <span class="material-symbols-outlined text-base me-2">
+                                                edit
+                                            </span>
+                                            Edit
+                                        </button>
+                                        <!-- edit-prompt-modal -->
+                                        <div id="edit-prompt-modal" data-modal-backdrop="edit-prompt-modal"
+                                            tabindex="-1" aria-hidden="true"
+                                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                                <!-- Modal content -->
+                                                <div class="relative bg-white rounded-lg shadow">
+                                                    <!-- Modal header -->
+                                                    <div
+                                                        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                                                        <h3 class="text-xl font-semibold text-gray-900">
+                                                            Edit subscription criteria
+                                                        </h3>
+                                                        <button type="button"
+                                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                                            data-modal-hide="edit-prompt-modal">
+                                                            <svg class="w-3 h-3" aria-hidden="true"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 14 14">
+                                                                <path stroke="currentColor" stroke-linecap="round"
+                                                                    stroke-linejoin="round" stroke-width="2"
+                                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                            </svg>
+                                                            <span class="sr-only">Close modal</span>
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal body -->
+                                                    <div class="p-4 md:p-5 space-y-4 ">
+                                                        <div class="max-h-56 p-1 overflow-auto">
+                                                            <div class="mb-2">
+                                                                <label for="default-input"
+                                                                    class="block mb-2 text-sm font-medium text-gray-900">Your subscription criteira</label>
+                                                                <input type="text" id="default-input"
+                                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Please enter keywords">
+                                                            </div>
+                                                            <div class="flex items-center mb-2 ">
+
+                                                                <input type="text" id="default-input"
+                                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 me-2" placeholder="Please enter keywords">
+
+                                                                <button type="button"
+                                                                    class="text-gray-500 hover:text-red-600 p-1 text-center inline-flex items-center">
+                                                                    <span class="material-symbols-outlined text-2xl">
+                                                                        delete
+                                                                    </span>
+
+                                                                </button>
+
+                                                            </div>
+                                                            <div class="flex items-center mb-2 ">
+                                                                <input type="text" id="default-input"
+                                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 me-2" placeholder="Please enter keywords">
+
+                                                                <button type="button"
+                                                                    class="text-gray-500 hover:text-red-600 p-1 text-center inline-flex items-center">
+                                                                    <span class="material-symbols-outlined text-2xl">
+                                                                        delete
+                                                                    </span>
+
+                                                                </button>
+
+                                                            </div>
+
+
+                                                            <button type="button"
+                                                                class="flex items-center px-3 py-1 text-xs  text-center text-blue-700 bg-blue-50 border border-blue-100 rounded-lg hover:bg-blue-100 focus:ring-1 focus:outline-none focus:ring-blue-300 ">
+                                                                <span class="material-symbols-outlined text-xl">
+                                                                    add
+                                                                </span>Add
+                                                            </button>
+                                                        </div>
+
+
+                                                        <div class="pt-2 border-t">
+                                                            <label for="default-input"
+                                                                class="block mb-2 text-sm font-medium text-gray-900">Your subscription topics</label>
+                                                            <input type="text" id="default-input"
+                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div
+                                                        class="flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b ">
+                                                        <button data-modal-hide="edit-prompt-modal" type="button"
+                                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-blue-700 focus:outline-none bg-white rounded-lg border border-blue-200 hover:bg-blue-100 hover:text-blue-800 focus:z-10 focus:ring-4 focus:ring-gray-100 me-3">Cancel</button>
+                                                        <button data-modal-hide="edit-prompt-modal" type="button"
+                                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Confirm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" data-modal-target="delete-popup-modal"
+                                            data-modal-toggle="delete-popup-modal"
+                                            class="px-3 py-1.5 text-xs font-medium text-center text-red-700 bg-red-100 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 flex items-center ">
+                                            <span class="material-symbols-outlined text-base me-2">
+                                                delete
+                                            </span>
+                                            Delete
+                                        </button>
+
+                                        <!-- delete-popup -->
+                                        <div id="delete-popup-modal" tabindex="-1"
+                                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                            <div class="relative p-4 w-full max-w-md max-h-full">
+                                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                                    <button type="button"
+                                                        class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                                        data-modal-hide="delete-popup-modal">
+                                                        <svg class="w-3 h-3" aria-hidden="true"
+                                                            xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 14 14">
+                                                            <path stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round" stroke-width="2"
+                                                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                        </svg>
+                                                        <span class="sr-only">Close modal</span>
+                                                    </button>
+                                                    <div class="p-4 md:p-5 text-center">
+                                                        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
+                                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                            fill="none" viewBox="0 0 20 20">
+                                                            <path stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round" stroke-width="2"
+                                                                d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                        </svg>
+                                                        <h3
+                                                            class="mb-5 text-lg font-normal text-gray-500 ">
+                                                            Delete this subscription topic for sure?</h3>
+                                                        <button data-modal-hide="popup-modal" type="button"
+                                                            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                                                            Yes, I'm sure
+                                                        </button>
+                                                        <button data-modal-hide="popup-modal" type="button"
+                                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No,
+                                                            cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        Semiconductor
+                                    </th>
+                                    <td class="px-6 py-4 ">
+                                        Emerging Materials for Next-Generation Semiconductor Devices
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        230
+                                    </td>
+                                    <td class="px-6 py-4 flex items-center">
+                                        <button type="button"
+                                            class="px-3 py-1.5 text-xs font-medium text-center text-blue-700 border border-blue-500 rounded-md hover:bg-blue-50 focus:ring-4 focus:outline-none focus:ring-blue-300 flex items-center me-3 ">
+                                            <span class="material-symbols-outlined text-base me-2">
+                                                edit
+                                            </span>
+                                            Edit
+                                        </button>
+                                        <button type="button"
+                                            class="px-3 py-1.5 text-xs font-medium text-center text-red-700 bg-red-100 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 flex items-center ">
+                                            <span class="material-symbols-outlined text-base me-2">
+                                                delete
+                                            </span>
+                                            Delete
+                                        </button>
+                                    </td>
+
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        SemiconductorSemiconductor
+                                    </th>
+                                    <td class="px-6 py-4 ">
+                                        Impact of 7nm and 5nm Nodes on Chip Performance
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        49
+                                    </td>
+                                    <td class="px-6 py-4 flex items-center">
+                                        <button type="button"
+                                            class="px-3 py-1.5 text-xs font-medium text-center text-blue-700 border border-blue-500 rounded-md hover:bg-blue-50 focus:ring-4 focus:outline-none focus:ring-blue-300 flex items-center me-3 ">
+                                            <span class="material-symbols-outlined text-base me-2">
+                                                edit
+                                            </span>
+                                            Edit
+                                        </button>
+                                        <button type="button"
+                                            class="px-3 py-1.5 text-xs font-medium text-center text-red-700 bg-red-100 rounded-lg hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 flex items-center ">
+                                            <span class="material-symbols-outlined text-base me-2">
+                                                delete
+                                            </span>
+                                            Delete
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <script type="module" src="../main.js"></script>
+</body>
+
+</html>

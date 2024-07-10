@@ -1,0 +1,127 @@
+<aside id="logo-sidebar"
+   class="fixed top-0 left-0 z-[35] w-64 h-screen pt-20  transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 "
+   aria-label="Sidebar">
+   <div class="h-full px-3 overflow-x-hidden overflow-y-auto bg-white ">
+
+      <ul class="space-y-2 px-1 font-medium border-b pb-3">
+
+         <li>
+            <button type="button" id="btn-down"
+               class="flex items-center justify-between w-full p-2 sidemenu-list  group  "
+               aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+
+               <div class="flex items-center">
+                  <span class="material-symbols-outlined flex-shrink-0 w-5 h-5">
+                     explore
+                  </span>
+                  <span class="flex-1 ms-3 whitespace-nowrap">Explore</span>
+               </div>
+
+               <span class="material-symbols-outlined icon">
+                  keyboard_arrow_down
+               </span>
+
+            </button>
+            <ul id="dropdown-example" class=" py-2 space-y-1 ">
+               <li class="sidemenu-list active">
+                  <a href="index.html" class="flex items-center pl-11 p-2   group">
+                     <span class="flex-1 whitespace-nowrap text-ellipsis overflow-hidden">Semiconductor</span>
+                     <span class="num-badge">99+</span>
+                  </a>
+               </li>
+
+               <li class="sidemenu-list">
+                  <a href="#" class="flex items-center pl-11 p-2   group">
+                     <span class="flex-1 whitespace-nowrap text-ellipsis overflow-hidden">Electronics</span>
+                     <span class="num-badge">7</span>
+                  </a>
+               </li>
+
+               <li class="sidemenu-list">
+                  <a href="#" class="flex items-center pl-11 p-2   group">
+                     <span class="flex-1 whitespace-nowrap text-ellipsis overflow-hidden">Display</span>
+                     <span class="num-badge">87</span>
+                  </a>
+               </li>
+
+               <li class="sidemenu-list">
+                  <a href="#" class="flex items-center pl-11 p-2   group">
+                     <span class="flex-1 whitespace-nowrap text-ellipsis overflow-hidden">New Energy</span>
+                     <span class="num-badge">2</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+      <ul class="pt-3 mb-3 max-h-[70vh] overflow-auto">
+         <li class="mb-3 px-2 flex items-center justify-between">
+            <p class="text-xs text-gray-500">Customize Topics</p>
+            <a href="prompt-list.html">
+               <span class=" material-symbols-fill text-gray-500 text-xl hover:text-blue-600">
+                  view_list
+               </span>
+            </a>
+         </li>
+         <li class="sidemenu-list">
+            <a href="custom-prompt.html" class="flex items-center p-2 rounded-lg   group">
+               <span class="flex-1 whitespace-nowrap text-ellipsis overflow-hidden">Semiconductor Semiconductor </span>
+               <span class="num-badge">3</span>
+            </a>
+         </li>
+         <li class="sidemenu-list">
+            <a href="#" class="flex items-center p-2 rounded-lg   group">
+               <span class="flex-1 whitespace-nowrap text-ellipsis overflow-hidden  ">Explore</span>
+               <span class="num-badge">99</span>
+            </a>
+         </li>
+         <li class="sidemenu-list">
+            <a href="#" class="flex items-center p-2 rounded-lg   group">
+               <span class="flex-1 whitespace-nowrap text-ellipsis overflow-hidden">Explore</span>
+               <span class="num-badge">99+</span>
+            </a>
+         </li>
+
+
+
+      </ul>
+      <button type="button" data-modal-target="member-limit-modal" data-modal-toggle="member-limit-modal"
+         class="btn-primary w-full flex items-center justify-center py-0 ">
+         <span class="material-symbols-fill text-xl me-2">
+            loupe
+         </span>
+         Add 
+      </button>
+
+
+   </div>
+</aside>
+
+<!-- 會員未登入，點擊Add Topic。 -->
+<div id="member-limit-modal" tabindex="-1"
+   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+   <div class="relative p-4 w-full max-w-md max-h-full">
+      <div class="relative bg-white rounded-lg shadow ">
+         <button type="button"
+            class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center "
+            data-modal-hide="member-limit-modal">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+            </svg>
+            <span class="sr-only">Close modal</span>
+         </button>
+
+
+         <div class="p-4 md:p-5 text-center">
+
+            <img class="w-10 h-10 mx-auto my-4" src="/assets/images/bulb.svg" alt="">
+            <h3 class="mb-5 text-lg font-normal text-gray-700">Log in now to set up your personal subscription list</h3>
+
+            <button data-modal-hide="member-limit-modal" type="button"
+               class="py-2.5 px-5 ms-3 text-sm font-medium text-blue-700 focus:outline-none bg-white rounded-lg border border-blue-200 hover:bg-blue-100 hover:text-blue-800 focus:z-10 focus:ring-4 focus:ring-gray-100 me-3">Cancel</button>
+            <button data-modal-hide="member-limit-modal" type="button"
+               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Confirm</button>
+         </div>
+      </div>
+   </div>
+</div>
