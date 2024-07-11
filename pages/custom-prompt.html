@@ -23,7 +23,9 @@
 
               <h2 class="text-4xl md:text-5xl  text-blue-700  font-bold mb-4">Custom Prompt</h2>
 
-              <p class="text-gray-700 text-sm">Your subscription topics：2024/07/03 12:22</p>
+              <p class="text-gray-700 text-sm">Last updated time :
+                <span>2024/07/03 12:22</span>
+              </p>
 
             </div>
 
@@ -84,20 +86,27 @@
                   <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
 
-                <button type="button" data-dropdown-toggle="filter"
+                <button type="button" data-tooltip-target="tooltip-filter" data-tooltip-placement="bottom"
+                  data-dropdown-toggle="filter"
                   class="text-gray-700 bg-transparent   hover:bg-gray-200 hover:text-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md  p-2.5 text-center inline-flex items-center">
                   <span class="material-symbols-outlined">
                     filter_alt
                   </span>
                 </button>
 
+                <div id="tooltip-filter" role="tooltip"
+                  class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+                  Filter News
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+
                 <form id="filter" class="min-w-[350px] me-3 max-w-md mx-auto hidden">
                   <label for="default-search"
                     class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                   <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                      <svg class="w-4 h-4 text-gray-500 " aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <svg class="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                       </svg>
@@ -115,7 +124,7 @@
           </div>
 
           <!-- delete-popup -->
-           
+
           <div id="delete-popup-modal" tabindex="-1"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-md max-h-full">
@@ -131,12 +140,8 @@
 
                 </button>
                 <div class="p-4 md:p-5 text-center">
-                  <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                  </svg>
-                  <h3 class="mb-5 text-lg font-normal text-gray-500 ">
+                  <img src="/assets/images/error.svg" class="mx-auto my-10 w-48 h-auto" alt="">
+                  <h3 class="mb-8 text-lg font-normal text-gray-500  ">
                     Delete this subscription topic for sure?</h3>
                   <button data-modal-hide="delete-popup-modal" type="button"
                     class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
